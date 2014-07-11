@@ -1,0 +1,47 @@
+
+	<h1>Inventory</h1>
+
+	<table>
+		<tr>
+			<th>Serial</th>
+			<th>Asset</th>
+			<th>Epic</th>
+			<th>Make</th>
+			<th>Model</th>
+			<th>Division</th>
+			<th>Primary User</th>
+			<th>Physical Location</th>
+			<th>Room/Floor</th>
+			<th>IP</th>
+			<th>Date</th>
+			<th>Tech Initials</th>
+			<th>Notes</th>
+			<th>Retired?</th>
+		</tr>
+
+	<% _.each(Inventory, function (Inventory) { %>
+		<tr>
+			<td><%= Inventory.serial %></td>
+			<td><%= Inventory.asset %></td>
+			<td><%= Inventory.epic %></td>
+			<td><%= Inventory.make %></td>
+			<td><%= Inventory.model %></td>
+			<td><%= Inventory.division %></td>
+			<td><%= Inventory.primary_user %></td>
+			<td><%= Inventory.physical_location %></td>
+			<td><%= Inventory.room_floor %></td>
+			<td><%= Inventory.IP %></td>
+			<td><%= Inventory.date %></td>
+			<td><%= Inventory.tech %></td>
+			<td><%= Inventory.notes %></td>
+			<td><%= Inventory.retire %></td>
+			<td><a href="/inventory/show/ <% Inventory.id %>">Show</a></td>
+			<td><a href="/inventory/edit/ <% Inventory.id %>">Edit</a></td>
+			<td><a href="/inventory/destroy/ <% Inventory.id %>">Delete</a></td>
+		<% }) %> 
+	</tr>
+	</table>
+
+	<br />
+
+	<a href="/inventory/new">Add Asset</a>
